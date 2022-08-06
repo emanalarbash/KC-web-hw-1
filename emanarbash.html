@@ -16,12 +16,32 @@ body {
       text-decoration: none;
     }
     </style>
-
+ <style>
+    .typewriter h1 {
+        overflow: hidden; /* Ensures the content is not revealed until the animation */
+        border-right: .15em solid orange; /* The typwriter cursor */
+        white-space: nowrap; /* Keeps the content on a single line */
+        margin: 0 auto; /* Gives that scrolling effect as the typing happens */
+        letter-spacing: .15em; /* Adjust as needed */
+        animation: 
+          typing 3.5s steps(40, end),
+          blink-caret .75s step-end infinite;
+      }
+      
+      /* The typing effect */
+      @keyframes typing {
+        from { width: 0 }
+        to { width: 100% }
+      }
+      
+      /* The typewriter cursor effect */
+      @keyframes blink-caret {
+        from, to { border-color: transparent }
+        50% { border-color: orange; }
+      }
+    </style>
 
    
-   
-
-
     <title > UNO G4     </title>
 </head>
 
@@ -42,7 +62,9 @@ body {
 
 
 
-
+<div class="typewriter">
+  <h1>The UNO GAME</h1>
+</div>
 <p><b><i> Each player draws a card. Player with the highest point value is the dealer. Shuffle the deck. Each player is dealt 7 cards.
 
     Place the remaining cards facedown to form a draw pile. Turn over the top card of the draw pile to begin a discard pile. If the top card is a Wild or Wild Draw 4, return it to the deck and pick another card. For all other cards, see directions that follow.
@@ -50,6 +72,7 @@ body {
   <br>   although If you forget to say, "UNO" before your card touches the DISCARD pile, but you "catch" yourself before any other player catches you, you are safe and not subject to the 4- card penalty. </br>
 </i></b></p>
 
+  
 <a href="http://www.crazygames.com/game/uno-online">CLICK HERE TO TRY THE GAME      </a>
 
 
@@ -89,61 +112,8 @@ body {
 
 
 
-
-
-
-
-
 </body>
 
 
 
-<head>
-    <style>
-        #myContainer {
-          width: 400px;
-          height: 400px;
-          position: relative;
-          background: palevioletred;
-        }
-        #myAnimation {
-          width: 50px;
-          height: 50px;
-          position: absolute;
-          background-color: rgb(238, 57, 57);
-        }
-        </style>
-        <body>
-        
-        <p>
-        <button onclick="myMove()">Click Me</button> 
-        </p>
-        
-        <div id ="myContainer">
-        <div id ="myAnimation"></div>
-        </div>
-        
-        <script>
-        var id = null;
-        function myMove() {
-          var elem = document.getElementById("myAnimation");   
-          var pos = 0;
-          clearInterval(id);
-          id = setInterval(frame, 10);
-          function frame() {
-            if (pos == 350) {
-              clearInterval(id);
-            } else {
-              pos++; 
-              elem.style.top = pos + 'px'; 
-              elem.style.left = pos + 'px'; 
-            }
-          }
-        }
-        </script>
-
-
-
-
-</head>
 </html>
